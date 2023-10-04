@@ -14,6 +14,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func regButtonAction(_ sender: UIButton) {
+        let vc = EnterPhoneNumberViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+//
+//
+//        let vc = VerifyCodeViewController()
+//        present(vc, animated: true)
+    }
+    
 }
 

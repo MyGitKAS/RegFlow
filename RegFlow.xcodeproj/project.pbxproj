@@ -25,6 +25,11 @@
 		1FB1A5C22ACC17E400F83370 /* VerifyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB1A5C02ACC17E400F83370 /* VerifyCodeViewController.xib */; };
 		1FB1A5C42ACC183E00F83370 /* VerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5C32ACC183E00F83370 /* VerifyView.swift */; };
 		1FB1A5C72ACD312900F83370 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5C62ACD312900F83370 /* UIViewController + Extensions.swift */; };
+		1FB1A5CA2ACDA41B00F83370 /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5C82ACDA41B00F83370 /* EnterNameViewController.swift */; };
+		1FB1A5CB2ACDA41B00F83370 /* EnterNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB1A5C92ACDA41B00F83370 /* EnterNameViewController.xib */; };
+		1FB1A5F02AD1A8FA00F83370 /* DataTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5EF2AD1A8F900F83370 /* DataTextField.swift */; };
+		1FB1A5F22AD1A90900F83370 /* MyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5F12AD1A90900F83370 /* MyDataViewController.swift */; };
+		1FB1A5F42AD1A92C00F83370 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5F32AD1A92C00F83370 /* DataView.swift */; };
 		A0BDDE97605993E0971FEC7E /* Pods_RegFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E23133F1A4BCF1548BA73 /* Pods_RegFlow.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +51,11 @@
 		1FB1A5C02ACC17E400F83370 /* VerifyCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyCodeViewController.xib; sourceTree = "<group>"; };
 		1FB1A5C32ACC183E00F83370 /* VerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyView.swift; sourceTree = "<group>"; };
 		1FB1A5C62ACD312900F83370 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		1FB1A5C82ACDA41B00F83370 /* EnterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
+		1FB1A5C92ACDA41B00F83370 /* EnterNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterNameViewController.xib; sourceTree = "<group>"; };
+		1FB1A5EF2AD1A8F900F83370 /* DataTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataTextField.swift; path = ../../../TeSSSttt/TeSSSttt/DataVC/DataTextField.swift; sourceTree = "<group>"; };
+		1FB1A5F12AD1A90900F83370 /* MyDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataViewController.swift; sourceTree = "<group>"; };
+		1FB1A5F32AD1A92C00F83370 /* DataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		71207796B4654CC86718ECEB /* Pods-RegFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegFlow.release.xcconfig"; path = "Target Support Files/Pods-RegFlow/Pods-RegFlow.release.xcconfig"; sourceTree = "<group>"; };
 		AD0E23133F1A4BCF1548BA73 /* Pods_RegFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RegFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,14 +99,12 @@
 			children = (
 				1F6CBF052AC0393B00616FA2 /* AppDelegate.swift */,
 				1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */,
-				1FB1A5BD2ACC150D00F83370 /* VerifyTextField.swift */,
-				1FB1A5C32ACC183E00F83370 /* VerifyView.swift */,
-				1FB1A5BF2ACC17E400F83370 /* VerifyCodeViewController.swift */,
-				1FB1A5C02ACC17E400F83370 /* VerifyCodeViewController.xib */,
-				1F6CBF272AC0598C00616FA2 /* EnterPhoneNumberViewController.swift */,
-				1F6CBF282AC0598C00616FA2 /* EnterPhoneNumberViewController.xib */,
 				1F6CBF092AC0393C00616FA2 /* ViewController.swift */,
 				1F6CBF0B2AC0393C00616FA2 /* Main.storyboard */,
+				1FB1A5EC2AD1A87D00F83370 /* DataVC */,
+				1FB1A5D22AD03EA000F83370 /* EnterNameVC */,
+				1FB1A5D12AD03E5D00F83370 /* EnterPhoneVC */,
+				1FB1A5D02AD03E0100F83370 /* VerifyCodeVC */,
 				1FB1A5C52ACD30EA00F83370 /* Extensions */,
 				1F6CBF0E2AC0393F00616FA2 /* Assets.xcassets */,
 				1F6CBF102AC0393F00616FA2 /* LaunchScreen.storyboard */,
@@ -112,6 +120,45 @@
 				1FB1A5C62ACD312900F83370 /* UIViewController + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1FB1A5D02AD03E0100F83370 /* VerifyCodeVC */ = {
+			isa = PBXGroup;
+			children = (
+				1FB1A5BD2ACC150D00F83370 /* VerifyTextField.swift */,
+				1FB1A5C32ACC183E00F83370 /* VerifyView.swift */,
+				1FB1A5BF2ACC17E400F83370 /* VerifyCodeViewController.swift */,
+				1FB1A5C02ACC17E400F83370 /* VerifyCodeViewController.xib */,
+			);
+			path = VerifyCodeVC;
+			sourceTree = "<group>";
+		};
+		1FB1A5D12AD03E5D00F83370 /* EnterPhoneVC */ = {
+			isa = PBXGroup;
+			children = (
+				1F6CBF272AC0598C00616FA2 /* EnterPhoneNumberViewController.swift */,
+				1F6CBF282AC0598C00616FA2 /* EnterPhoneNumberViewController.xib */,
+			);
+			path = EnterPhoneVC;
+			sourceTree = "<group>";
+		};
+		1FB1A5D22AD03EA000F83370 /* EnterNameVC */ = {
+			isa = PBXGroup;
+			children = (
+				1FB1A5C82ACDA41B00F83370 /* EnterNameViewController.swift */,
+				1FB1A5C92ACDA41B00F83370 /* EnterNameViewController.xib */,
+			);
+			path = EnterNameVC;
+			sourceTree = "<group>";
+		};
+		1FB1A5EC2AD1A87D00F83370 /* DataVC */ = {
+			isa = PBXGroup;
+			children = (
+				1FB1A5EF2AD1A8F900F83370 /* DataTextField.swift */,
+				1FB1A5F32AD1A92C00F83370 /* DataView.swift */,
+				1FB1A5F12AD1A90900F83370 /* MyDataViewController.swift */,
+			);
+			path = DataVC;
 			sourceTree = "<group>";
 		};
 		D56DC9EC83BE26496145A6EF /* Frameworks */ = {
@@ -204,6 +251,7 @@
 				1F6CBF1C2AC042A000616FA2 /* GoogleService-Info.plist in Resources */,
 				1FB1A5C22ACC17E400F83370 /* VerifyCodeViewController.xib in Resources */,
 				1F6CBF2A2AC0598C00616FA2 /* EnterPhoneNumberViewController.xib in Resources */,
+				1FB1A5CB2ACDA41B00F83370 /* EnterNameViewController.xib in Resources */,
 				1F6CBF0F2AC0393F00616FA2 /* Assets.xcassets in Resources */,
 				1F6CBF0D2AC0393C00616FA2 /* Main.storyboard in Resources */,
 			);
@@ -258,11 +306,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB1A5CA2ACDA41B00F83370 /* EnterNameViewController.swift in Sources */,
+				1FB1A5F02AD1A8FA00F83370 /* DataTextField.swift in Sources */,
 				1FB1A5BE2ACC150D00F83370 /* VerifyTextField.swift in Sources */,
 				1FB1A5C72ACD312900F83370 /* UIViewController + Extensions.swift in Sources */,
 				1F6CBF0A2AC0393C00616FA2 /* ViewController.swift in Sources */,
 				1F6CBF062AC0393B00616FA2 /* AppDelegate.swift in Sources */,
+				1FB1A5F42AD1A92C00F83370 /* DataView.swift in Sources */,
 				1FB1A5C42ACC183E00F83370 /* VerifyView.swift in Sources */,
+				1FB1A5F22AD1A90900F83370 /* MyDataViewController.swift in Sources */,
 				1FB1A5C12ACC17E400F83370 /* VerifyCodeViewController.swift in Sources */,
 				1F6CBF082AC0393C00616FA2 /* SceneDelegate.swift in Sources */,
 				1F6CBF292AC0598C00616FA2 /* EnterPhoneNumberViewController.swift in Sources */,

@@ -15,15 +15,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func regButtonAction(_ sender: UIButton) {
-        let vc = EnterPhoneNumberViewController()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = EnterPhoneNumberViewController()
+//        navigationController?.pushViewController(vc, animated: true)
         
+//                let vc = EnterNameViewController()
+//                present(vc, animated: true)
+            let vc = MyDataViewController()
+                present(vc, animated: true)
         
-        
-//
-//
-//        let vc = VerifyCodeViewController()
-//        present(vc, animated: true)
     }
     
 }

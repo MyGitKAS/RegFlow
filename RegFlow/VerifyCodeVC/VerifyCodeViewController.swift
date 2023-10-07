@@ -10,10 +10,9 @@ import FirebaseAuth
 
 class VerifyCodeViewController: UIViewController {
     
-    
-    //private let verificationID: String!
     var verificationID: String!
     private let verifyView = VerifyView()
+    
     private lazy var checkButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false

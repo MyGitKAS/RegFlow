@@ -8,22 +8,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var letsGoButton: UIButton!
+    @IBOutlet weak var topLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .black
+        letsGoButton.skeletonButton()
     }
 
-    @IBAction func regButtonAction(_ sender: UIButton) {
-//        let vc = EnterPhoneNumberViewController()
-//        navigationController?.pushViewController(vc, animated: true)
+    @IBAction func letsGoButtonAction(_ sender: Any) {
+        let vc = EnterPhoneNumberViewController()
+        navigationController?.pushViewController(vc, animated: true)
         
-//                let vc = EnterNameViewController()
-//                present(vc, animated: true)
-            let vc = MyDataViewController()
-                present(vc, animated: true)
+        
+        
+     
+        
+//        let vc = VerifyCodeViewController()
+//          present(vc, animated: true)
+//
+//                let vc = AddImageViewController()
+//                    present(vc, animated: true)
+            }
         
     }
     
-}
+
+
 

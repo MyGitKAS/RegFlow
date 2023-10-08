@@ -28,11 +28,12 @@ class VerifyTextField: UITextField {
     }
     
     private func configure() {
-        backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         layer.cornerRadius = 10
-        layer.borderColor = UIColor.purple.cgColor
+        layer.borderColor = UIColor.green.cgColor
         tintColor = .clear
-        textColor = .purple
+        textColor = .white
+        attributedPlaceholder = NSAttributedString(string: "", attributes: [.font: UIFont.systemFont(ofSize: 44)])
         textAlignment = .center
     }
     

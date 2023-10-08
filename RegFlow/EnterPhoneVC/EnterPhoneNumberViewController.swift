@@ -26,15 +26,26 @@ class EnterPhoneNumberViewController: UIViewController {
         setupConfig()
     }
     private func setupConfig() {
-        
-        // Changes the initial region to France
-        enterNumberTextField.setFlag(key: .FR)
-       
+        //
+        sendCodeButton.skeletonButton()
         sendCodeButton.alpha = 0.5
         sendCodeButton.isEnabled = false
         
+        //
+        enterNumberTextField.setFlag(key: .FR)
         enterNumberTextField.delegate = self
         enterNumberTextField.displayMode = .list
+        enterNumberTextField.backgroundColor = .white
+        //enterNumberTextField.layer.cornerRadius = 10
+        //enterNumberTextField.layer.borderWidth = 1
+       // enterNumberTextField.layer.borderColor = UIColor.green.cgColor
+        
+        //enterNumberTextField.selectedCountry?.phoneCode
+        
+//        enterNumberTextField.attributedPlaceholder = NSAttributedString(
+//            string: "Placeholder Text",
+//            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+      //  )
         
         listController = FPNCountryListViewController(style: .grouped)
         listController.setup(repository: enterNumberTextField.countryRepository)
@@ -42,6 +53,10 @@ class EnterPhoneNumberViewController: UIViewController {
         }
         
         showTestNumberView.isHidden = true
+        showTestNumberView.layer.cornerRadius = 10
+        showTestNumberView.backgroundColor = .clear
+        showTestNumberView.layer.borderWidth = 1
+        showTestNumberView.layer.borderColor = UIColor.green.cgColor
     }
     
     @IBAction func sendCodeButtonAction(_ sender: UIButton) {

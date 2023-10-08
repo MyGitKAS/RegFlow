@@ -16,32 +16,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you want to register in Matrix" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-uv-odD">
-                                <rect key="frame" x="57" y="214" width="300" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-uv-odD">
+                                <rect key="frame" x="57" y="308" width="300" height="156"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Cpt-wx-4yv"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Do you want to register in Matrix ?">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="40" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogX-YN-XcN">
-                                <rect key="frame" x="82" y="402" width="250" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SpW-Gg-KXu">
+                                <rect key="frame" x="57" y="514" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.1022562769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="etB-t9-iE9"/>
+                                    <constraint firstAttribute="height" constant="40" id="xlJ-Yd-USZ"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Registr Me!">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Let's Go!">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="23" name="Sathu"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="regButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kMQ-F2-OLr"/>
+                                    <action selector="letsGoButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r4b-N0-jxn"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="SpW-Gg-KXu" firstAttribute="top" secondItem="rGE-uv-odD" secondAttribute="bottom" constant="50" id="7SU-VM-ky0"/>
+                            <constraint firstItem="SpW-Gg-KXu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="K5n-DI-uRm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SpW-Gg-KXu" secondAttribute="trailing" constant="57" id="Y9p-xF-eRS"/>
+                            <constraint firstItem="rGE-uv-odD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="220" id="iMj-8Y-Jfu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rGE-uv-odD" secondAttribute="trailing" constant="57" id="tyU-ra-Gb8"/>
+                            <constraint firstItem="rGE-uv-odD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="vov-Sa-Km8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xAZ-M2-Ywp"/>
+                    <connections>
+                        <outlet property="letsGoButton" destination="SpW-Gg-KXu" id="k60-sv-YxA"/>
+                        <outlet property="topLabel" destination="rGE-uv-odD" id="m5C-K5-2kS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

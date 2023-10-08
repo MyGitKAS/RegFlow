@@ -65,7 +65,7 @@ extension VerifyView: FieldsProtocol {
         } else {
             //verifyFilds[tag - 1].becomeFirstResponder()
             // Check metod
-            verifyDelegate?.verify()
+           // verifyDelegate?.verify()
         }
     }
     

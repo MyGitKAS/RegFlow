@@ -12,7 +12,8 @@ class DataView: UIView {
     
     var fieldStack = UIStackView()
     var verifyFilds = [DataTextField]()
-    private  let placeHolderText = ["Name","Nickname","email","Password","ConfirmPassword"]
+    
+    private  let placeHolderText = ["Name","Date","Email","Password","ConfirmPassword"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,7 +21,6 @@ class DataView: UIView {
         fieldStack.translatesAutoresizingMaskIntoConstraints = false
         verifyTextFieldConfiguration()
         setConstraints()
-        backgroundColor = .gray
         verifyFilds[0].becomeFirstResponder()
         
     }
@@ -30,7 +30,7 @@ class DataView: UIView {
     }
     
     private func verifyTextFieldConfiguration() {
-        fieldStack.spacing = 5
+        fieldStack.spacing = 15
         fieldStack.distribution = .fillEqually
         fieldStack.axis = .vertical
         
@@ -66,8 +66,45 @@ extension DataView {
     }
 }
 
-extension DataView {
-    func clearAllInputFields() {
-        verifyFilds.forEach {$0.text = ""}
-    }
-}
+
+
+//extension DataView {
+//    func gatherDataFromTextFields() {
+//
+//        if let text2 = verifyFilds[0].text {
+//            UserDefaults.standard.set(text2, forKey: "Name")
+//        }
+//
+//        if let text3 = verifyFilds[1].text {
+//            UserDefaults.standard.set(text3, forKey: "Nickname")
+//        }
+//
+//        if let text4 = verifyFilds[2].text {
+//            UserDefaults.standard.set(text4, forKey: "Email")
+//        }
+//
+//        if let text5 = verifyFilds[3].text {
+//            UserDefaults.standard.set(text5, forKey: "Password")
+//        }
+//
+//    }
+//
+//}
+//
+//extension DataView {
+//    func createString() -> String {
+//        let name = UserDefaults.standard.string(forKey: "Name") ?? "?????"
+//        let nickName = UserDefaults.standard.string(forKey: "Nickname") ?? "?????"
+//        let email = UserDefaults.standard.string(forKey: "email") ?? "?????"
+//        let pass = UserDefaults.standard.string(forKey: "Password") ?? "?????"
+//
+//        let str = """
+//    Your data has been successfully placed into the matrix.
+//    Name: \(name)
+//    Nickname: \(nickName)
+//    Email: \(email)
+//    Password: \(pass)
+//    """
+//        return str
+//    }
+//}

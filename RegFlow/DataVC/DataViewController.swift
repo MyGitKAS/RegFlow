@@ -1,16 +1,10 @@
-//
-//  MyDataViewController.swift
-//  TeSSSttt
-//
-//  Created by Алексей Кухленков on 7.10.23.
-//
 
 import UIKit
 
 class DataViewController: UIViewController {
     
     let dataView = DataView()
-    let createUserButton = UIButton(type: .system)
+    let createUserButton = UIButton()
     let topLabel: UILabel = {
     let label = UILabel()
     label.text = "Give your data to the Matrix."
@@ -27,6 +21,7 @@ class DataViewController: UIViewController {
         view.addSubview(dataView)
         view.addSubview(topLabel)
         view.addSubview(createUserButton)
+        
         setConstraints()
         setConfigure()
     }
@@ -34,20 +29,15 @@ class DataViewController: UIViewController {
     private func setConfigure() {
         let yOffset: CGFloat = 500
         let offset = 100
-        
-        topLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 250)
-        
-        // Настройка кнопки "Create"
-        createUserButton.setTitleColor(.black, for: .normal)
+        //
         createUserButton.setTitle("Create", for: .normal)
         createUserButton.addTarget(self, action: #selector(createButtonTapped), for: .touchUpInside)
         createUserButton.frame = CGRect(x: (offset / 2), y: Int(yOffset) , width: Int(view.frame.width) - offset, height: 40)
-        createUserButton.backgroundColor = .green
-        createUserButton.layer.cornerRadius = 10
+        createUserButton.skeletonButton()
+        //
+        topLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 250)
     }
 
-    
-    // Метод для проверки совпадения пароля и подтверждения пароля
     @objc func createButtonTapped() {
         let name = dataView.verifyFilds[0].text ?? "non"
         let date = dataView.verifyFilds[1].text ?? "non"
@@ -63,7 +53,7 @@ class DataViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         } else {
-            present(showAlert(), animated: true)
+            present(showAlert(message: "Passwords must match!"), animated: true)
             dataView.verifyFilds[3].text = ""
             dataView.verifyFilds[4].text = ""
         }
@@ -84,9 +74,7 @@ extension DataViewController {
 extension DataViewController {
     func showAlert() -> UIAlertController {
         let alertController = UIAlertController(title: nil, message: "Wrong!!!", preferredStyle: .alert)
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
         alertController.addAction(cancelAction)
         return alertController
     }

@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  RegFlow
-//
-//  Created by Алексей Кухленков on 24.09.23.
-//
 
 import UIKit
 import FirebaseCore

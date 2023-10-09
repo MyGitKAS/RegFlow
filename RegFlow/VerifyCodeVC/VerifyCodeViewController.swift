@@ -1,9 +1,3 @@
-//
-//  VerifyCodeViewController.swift
-//  RegFlow
-//
-//  Created by Алексей Кухленков on 3.10.23.
-//
 
 import UIKit
 import FirebaseAuth
@@ -47,7 +41,7 @@ extension VerifyCodeViewController {
             verifyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             verifyView.heightAnchor.constraint(equalToConstant: 70),
             //
-            checkButton.topAnchor.constraint(equalTo: verifyView.bottomAnchor, constant: 20),
+            checkButton.topAnchor.constraint(equalTo: verifyView.bottomAnchor, constant: 40),
             checkButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             checkButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             checkButton.heightAnchor.constraint(equalToConstant: 40)

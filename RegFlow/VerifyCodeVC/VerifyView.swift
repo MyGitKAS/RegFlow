@@ -1,9 +1,3 @@
-//
-//  VerifyView.swift
-//  RegFlow
-//
-//  Created by Алексей Кухленков on 3.10.23.
-//
 
 import UIKit
 
@@ -14,18 +8,15 @@ protocol VerifyProtocol: AnyObject {
 class VerifyView: UIView {
     
     weak var verifyDelegate: VerifyProtocol?
-    
     var fieldStack = UIStackView()
     var verifyFilds = [VerifyTextField]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         verifyTextFieldConfiguration()
         setConstraints()
         translatesAutoresizingMaskIntoConstraints = false
         verifyFilds[0].becomeFirstResponder()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -63,9 +54,8 @@ extension VerifyView: FieldsProtocol {
         if tag != verifyFilds.count - 1 {
             verifyFilds[tag + 1].becomeFirstResponder()
         } else {
-            //verifyFilds[tag - 1].becomeFirstResponder()
             // Check metod
-           // verifyDelegate?.verify()
+            verifyDelegate?.verify()
         }
     }
     
@@ -75,8 +65,6 @@ extension VerifyView: FieldsProtocol {
             verifyFilds[tag - 1].becomeFirstResponder()
         }
     }
-    
-    
 }
 //MARK: -
 extension VerifyView {

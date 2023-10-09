@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1F2C63452AD1DF7600179162 /* EndRegisrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63432AD1DF7600179162 /* EndRegisrationViewController.swift */; };
-		1F2C63462AD1DF7600179162 /* EndRegisrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2C63442AD1DF7600179162 /* EndRegisrationViewController.xib */; };
 		1F2C634D2AD282AF00179162 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C634C2AD282AF00179162 /* AddImageViewController.swift */; };
 		1F2C634F2AD2891D00179162 /* UIImage .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C634E2AD2891D00179162 /* UIImage .swift */; };
 		1F2C63532AD30B2B00179162 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63522AD30B2A00179162 /* UIButton.swift */; };
 		1F2C63562AD3281100179162 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63552AD3281100179162 /* DatabaseService.swift */; };
 		1F2C63592AD32BCB00179162 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63582AD32BCB00179162 /* User.swift */; };
+		1F2C635B2AD33E0D00179162 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2C635A2AD33E0D00179162 /* FirebaseFirestore */; };
+		1F2C635D2AD45F7700179162 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C635C2AD45F7600179162 /* AuthService.swift */; };
 		1F6CBF062AC0393B00616FA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF052AC0393B00616FA2 /* AppDelegate.swift */; };
 		1F6CBF082AC0393C00616FA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */; };
 		1F6CBF0A2AC0393C00616FA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF092AC0393C00616FA2 /* ViewController.swift */; };
@@ -41,12 +42,12 @@
 /* Begin PBXFileReference section */
 		08E75FA5FBCE3A62BF6074C9 /* Pods-RegFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegFlow.debug.xcconfig"; path = "Target Support Files/Pods-RegFlow/Pods-RegFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		1F2C63432AD1DF7600179162 /* EndRegisrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndRegisrationViewController.swift; sourceTree = "<group>"; };
-		1F2C63442AD1DF7600179162 /* EndRegisrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndRegisrationViewController.xib; sourceTree = "<group>"; };
 		1F2C634C2AD282AF00179162 /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 		1F2C634E2AD2891D00179162 /* UIImage .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage .swift"; sourceTree = "<group>"; };
 		1F2C63522AD30B2A00179162 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		1F2C63552AD3281100179162 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		1F2C63582AD32BCB00179162 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1F2C635C2AD45F7600179162 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1F6CBF022AC0393B00616FA2 /* RegFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6CBF052AC0393B00616FA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 				1F6CBF222AC0441D00616FA2 /* FirebaseDatabase in Frameworks */,
 				1F6CBF202AC0441D00616FA2 /* FirebaseAuth in Frameworks */,
 				A0BDDE97605993E0971FEC7E /* Pods_RegFlow.framework in Frameworks */,
+				1F2C635B2AD33E0D00179162 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				1F2C63432AD1DF7600179162 /* EndRegisrationViewController.swift */,
-				1F2C63442AD1DF7600179162 /* EndRegisrationViewController.xib */,
 			);
 			path = EndRegisrationVC;
 			sourceTree = "<group>";
@@ -107,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				1F2C63552AD3281100179162 /* DatabaseService.swift */,
+				1F2C635C2AD45F7600179162 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -144,8 +146,8 @@
 				1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */,
 				1F6CBF092AC0393C00616FA2 /* ViewController.swift */,
 				1F6CBF0B2AC0393C00616FA2 /* Main.storyboard */,
-				1F2C63572AD32BAE00179162 /* Model */,
 				1F2C63542AD3279C00179162 /* Services */,
+				1F2C63572AD32BAE00179162 /* Model */,
 				1F2C634B2AD2829200179162 /* AddImageVC */,
 				1F2C63422AD1DF5B00179162 /* EndRegisrationVC */,
 				1FB1A5EC2AD1A87D00F83370 /* DataVC */,
@@ -240,6 +242,7 @@
 				1F6CBF212AC0441D00616FA2 /* FirebaseDatabase */,
 				1F6CBF232AC0441D00616FA2 /* FirebaseDatabaseSwift */,
 				1F6CBF252AC0441D00616FA2 /* FirebaseStorage */,
+				1F2C635A2AD33E0D00179162 /* FirebaseFirestore */,
 			);
 			productName = RegFlow;
 			productReference = 1F6CBF022AC0393B00616FA2 /* RegFlow.app */;
@@ -290,7 +293,6 @@
 				1F6CBF1C2AC042A000616FA2 /* GoogleService-Info.plist in Resources */,
 				1FB1A5C22ACC17E400F83370 /* VerifyCodeViewController.xib in Resources */,
 				1F6CBF2A2AC0598C00616FA2 /* EnterPhoneNumberViewController.xib in Resources */,
-				1F2C63462AD1DF7600179162 /* EndRegisrationViewController.xib in Resources */,
 				1F6CBF0F2AC0393F00616FA2 /* Assets.xcassets in Resources */,
 				1F6CBF0D2AC0393C00616FA2 /* Main.storyboard in Resources */,
 			);
@@ -348,6 +350,7 @@
 				1FB1A5F02AD1A8FA00F83370 /* DataTextField.swift in Sources */,
 				1FB1A5BE2ACC150D00F83370 /* VerifyTextField.swift in Sources */,
 				1FB1A5C72ACD312900F83370 /* UIViewController + Extensions.swift in Sources */,
+				1F2C635D2AD45F7700179162 /* AuthService.swift in Sources */,
 				1F6CBF0A2AC0393C00616FA2 /* ViewController.swift in Sources */,
 				1F6CBF062AC0393B00616FA2 /* AppDelegate.swift in Sources */,
 				1F2C63532AD30B2B00179162 /* UIButton.swift in Sources */,
@@ -599,6 +602,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1F2C635A2AD33E0D00179162 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F6CBF1E2AC0441D00616FA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		1F6CBF1F2AC0441D00616FA2 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1F6CBF1E2AC0441D00616FA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

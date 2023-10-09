@@ -1,9 +1,3 @@
-//
-//  UIButton.swift
-//  RegFlow
-//
-//  Created by Алексей Кухленков on 8.10.23.
-//
 
 import UIKit
 
@@ -13,6 +7,6 @@ extension UIButton {
         self.backgroundColor = .clear
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.green.cgColor
-        self.titleLabel?.textColor = .green
+        self.setTitleColor(.green, for: .normal)
     }
 }

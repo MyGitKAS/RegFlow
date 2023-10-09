@@ -1,12 +1,5 @@
-//
-//  VerifyTextField.swift
-//  RegFlow
-//
-//  Created by Алексей Кухленков on 3.10.23.
-//
 
 import UIKit
-
 
 protocol FieldsProtocol: AnyObject {
     func activeNextField(tag: Int)
@@ -28,9 +21,10 @@ class VerifyTextField: UITextField {
     }
     
     private func configure() {
-        backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.1781766439, green: 0.1781766439, blue: 0.1781766439, alpha: 1)
         layer.cornerRadius = 10
         layer.borderColor = UIColor.green.cgColor
+        layer.borderWidth = 1
         tintColor = .clear
         textColor = .white
         attributedPlaceholder = NSAttributedString(string: "", attributes: [.font: UIFont.systemFont(ofSize: 44)])
@@ -48,9 +42,7 @@ class VerifyTextField: UITextField {
 extension VerifyTextField: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         text = string
-        
         if range.length == 0 {
             fieldsDelegate?.activeNextField(tag: tag)
             resignFirstResponder()
@@ -63,6 +55,6 @@ extension VerifyTextField: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        layer.borderWidth = 0
+        layer.borderWidth = 1
     }
 }

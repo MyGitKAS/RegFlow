@@ -1,9 +1,3 @@
-//
-//  EnterPhoneNumberViewController.swift
-//  RegFlow
-//
-//  Created by Алексей Кухленков on 24.09.23.
-//
 
 import UIKit
 import FlagPhoneNumber
@@ -13,13 +7,11 @@ import FirebaseStorage
 class EnterPhoneNumberViewController: UIViewController {
 
     @IBOutlet weak var showTestNumberView: UIView!
-    
+    @IBOutlet weak var enterNumberTextField: FPNTextField!
+    @IBOutlet weak var sendCodeButton: UIButton!
     
     var listController: FPNCountryListViewController!
     var phoneNumber: String?
-    
-    @IBOutlet weak var enterNumberTextField: FPNTextField!
-    @IBOutlet weak var sendCodeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,22 +28,12 @@ class EnterPhoneNumberViewController: UIViewController {
         enterNumberTextField.delegate = self
         enterNumberTextField.displayMode = .list
         enterNumberTextField.backgroundColor = .white
-        //enterNumberTextField.layer.cornerRadius = 10
-        //enterNumberTextField.layer.borderWidth = 1
-       // enterNumberTextField.layer.borderColor = UIColor.green.cgColor
-        
-        //enterNumberTextField.selectedCountry?.phoneCode
-        
-//        enterNumberTextField.attributedPlaceholder = NSAttributedString(
-//            string: "Placeholder Text",
-//            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-      //  )
-        
+        //
         listController = FPNCountryListViewController(style: .grouped)
         listController.setup(repository: enterNumberTextField.countryRepository)
         listController.didSelect = { counry in self.enterNumberTextField.setFlag(countryCode: counry.code)
         }
-        
+        //
         showTestNumberView.isHidden = true
         showTestNumberView.layer.cornerRadius = 10
         showTestNumberView.backgroundColor = .clear
@@ -64,13 +46,11 @@ class EnterPhoneNumberViewController: UIViewController {
         
         // OFF check capcha
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
-        //
+    
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber!, uiDelegate: nil) {verifID,error in
             if error != nil {
                 print(error?.localizedDescription ?? "Error")
             } else {
-                print("OK!!!")
-                //let vc = CheckCodeViewController()
                 let vc = VerifyCodeViewController()
                 vc.verificationID = verifID
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -90,15 +70,7 @@ extension EnterPhoneNumberViewController: UITextFieldDelegate {
     
     // Limits character input to textField
  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//
-//
-//       let correctNumber = enterNumberTextField.placeholder?.first?.description ?? ""
-//
-//       if textField.text?.count ?? 0 < 1 {
-//           if string != correctNumber { return false }
-//       }
-          // if string != correctNumber { return false }
-       
+
        // get the current text, or use an empty string if that failed
     let currentText = textField.text ?? ""
 
@@ -128,12 +100,11 @@ extension EnterPhoneNumberViewController: FPNTextFieldDelegate {
             sendCodeButton.isEnabled = false
         }
     }
+    
     func fpnDisplayCountryList() {
       let navigationController = UINavigationController(rootViewController: listController)
         navigationController.title = "Country"
         enterNumberTextField.text = ""
         self.present(navigationController, animated: true, completion: nil)
     }
-    
-    
 }

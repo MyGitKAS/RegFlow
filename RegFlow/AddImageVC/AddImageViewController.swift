@@ -1,9 +1,3 @@
-//
-//  AddImageViewController.swift
-//  RegFlow
-//
-//  Created by Алексей Кухленков on 8.10.23.
-//
 
 import UIKit
 
@@ -20,8 +14,6 @@ class AddImageViewController: UIViewController {
           button.translatesAutoresizingMaskIntoConstraints = false
           return button
       }()
-    
-    
     
     let sendButton: UIButton = {
           let button = UIButton()
@@ -64,6 +56,7 @@ class AddImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .black
         view.addSubview(label)
         view.addSubview(imageView)
@@ -71,63 +64,27 @@ class AddImageViewController: UIViewController {
         view.addSubview(addButton)
         view.addSubview(crossButton)
         
-        
         setConfig()
         setupConstraints()
-        
     }
     
     func setConfig() {
-             imageView.frame.size = CGSize(width: widthImage, height: heightImage) //размеры новой картинки
-             imageView.layer.cornerRadius = CGFloat(widthImage / 2)
-             imageView.clipsToBounds = true
-             imageView.layer.borderColor = UIColor.green.cgColor // цвет рамки
-             imageView.layer.borderWidth = 2 // толщина рамки
-        
-             sendButton.isHidden = true
-        
-             crossButton.frame(forAlignmentRect: CGRect(x: self.view.bounds.width + 300, y: 100, width: 40, height: 40))
-       // UIButton(frame: CGRect(x: self.view.bounds.width - 40, y: 20, width: 30, height: 30))
-    }
-    
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-            label.bottomAnchor.constraint(equalTo: imageView.topAnchor, constant: -80),
-            
-            
-            addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addButton.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -80),
-            addButton.widthAnchor.constraint(equalToConstant: 250),
-            addButton.heightAnchor.constraint(equalToConstant: 250),
-            
-            
-            crossButton.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 170),
-            crossButton.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -400),
-            crossButton.widthAnchor.constraint(equalToConstant: 30),
-            crossButton.heightAnchor.constraint(equalToConstant: 230),
-            
-            
-            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -80),
-            imageView.widthAnchor.constraint(equalToConstant: 250),
-            imageView.heightAnchor.constraint(equalToConstant: 250),
-            
-            
-            
-            sendButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sendButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
-            sendButton.widthAnchor.constraint(equalToConstant: 250),
-            sendButton.heightAnchor.constraint(equalToConstant: 40)
-            
-            
-        ])
+        //
+        imageView.frame.size = CGSize(width: widthImage, height: heightImage)
+        imageView.layer.cornerRadius = CGFloat(widthImage / 2)
+        imageView.clipsToBounds = true
+        imageView.layer.borderColor = UIColor.green.cgColor
+        imageView.layer.borderWidth = 2
+        //
+        sendButton.isHidden = true
+        //
+        crossButton.frame(forAlignmentRect: CGRect(x: self.view.bounds.width + 300, y: 100, width: 40, height: 40))
     }
     
     @objc func addButtonTapped() {
         let imagePickerController = UIImagePickerController()
          imagePickerController.delegate = self
-         imagePickerController.sourceType = .photoLibrary // Или .camera для использования камеры
+         imagePickerController.sourceType = .photoLibrary // Or .camera To use the camera
          present(imagePickerController, animated: true, completion: nil)
     }
     
@@ -137,9 +94,40 @@ class AddImageViewController: UIViewController {
     
 }
 
+extension AddImageViewController {
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            //
+            label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            label.bottomAnchor.constraint(equalTo: imageView.topAnchor, constant: -80),
+            //
+            addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addButton.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -80),
+            addButton.widthAnchor.constraint(equalToConstant: 250),
+            addButton.heightAnchor.constraint(equalToConstant: 250),
+            //
+            crossButton.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 170),
+            crossButton.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -400),
+            crossButton.widthAnchor.constraint(equalToConstant: 30),
+            crossButton.heightAnchor.constraint(equalToConstant: 230),
+            //
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -80),
+            imageView.widthAnchor.constraint(equalToConstant: 250),
+            imageView.heightAnchor.constraint(equalToConstant: 250),
+            //
+            sendButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sendButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            sendButton.widthAnchor.constraint(equalToConstant: 250),
+            sendButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+}
 
 extension AddImageViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         if let image = info[.originalImage] as? UIImage {
             let originalImage = image
             let newSize = CGSize(width: 250, height: 250)
@@ -149,11 +137,9 @@ extension AddImageViewController: UIImagePickerControllerDelegate & UINavigation
                       sendButton.isHidden = false
                 addButton.isHidden = true
             } else {
-                // обработать ошибку
+                // Handle error
             }
-
-//            photoAdd.isHidden = true
-            // Здесь вы можете использовать полученное изображение
+            // Use the resulting image
         }
         picker.dismiss(animated: true, completion: nil)
     }

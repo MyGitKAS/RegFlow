@@ -9,6 +9,8 @@ import UIKit
 
 class EndRegisrationViewController: UIViewController {
 
+    let topLabel = UILabel() 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

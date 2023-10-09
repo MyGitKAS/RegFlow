@@ -1,9 +1,3 @@
-//
-//  DataView.swift
-//  TeSSSttt
-//
-//  Created by Алексей Кухленков on 7.10.23.
-//
 
 import UIKit
 
@@ -65,46 +59,3 @@ extension DataView {
         ])
     }
 }
-
-
-
-//extension DataView {
-//    func gatherDataFromTextFields() {
-//
-//        if let text2 = verifyFilds[0].text {
-//            UserDefaults.standard.set(text2, forKey: "Name")
-//        }
-//
-//        if let text3 = verifyFilds[1].text {
-//            UserDefaults.standard.set(text3, forKey: "Nickname")
-//        }
-//
-//        if let text4 = verifyFilds[2].text {
-//            UserDefaults.standard.set(text4, forKey: "Email")
-//        }
-//
-//        if let text5 = verifyFilds[3].text {
-//            UserDefaults.standard.set(text5, forKey: "Password")
-//        }
-//
-//    }
-//
-//}
-//
-//extension DataView {
-//    func createString() -> String {
-//        let name = UserDefaults.standard.string(forKey: "Name") ?? "?????"
-//        let nickName = UserDefaults.standard.string(forKey: "Nickname") ?? "?????"
-//        let email = UserDefaults.standard.string(forKey: "email") ?? "?????"
-//        let pass = UserDefaults.standard.string(forKey: "Password") ?? "?????"
-//
-//        let str = """
-//    Your data has been successfully placed into the matrix.
-//    Name: \(name)
-//    Nickname: \(nickName)
-//    Email: \(email)
-//    Password: \(pass)
-//    """
-//        return str
-//    }
-//}

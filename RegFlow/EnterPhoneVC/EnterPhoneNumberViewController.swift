@@ -10,12 +10,14 @@ class EnterPhoneNumberViewController: UIViewController {
     @IBOutlet weak var enterNumberTextField: FPNTextField!
     @IBOutlet weak var sendCodeButton: UIButton!
     
+    @IBOutlet weak var switchInfo: UISwitch!
+    
     var listController: FPNCountryListViewController!
     var phoneNumber: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupConfig()
+       setupConfig()
     }
     private func setupConfig() {
         //
@@ -24,10 +26,16 @@ class EnterPhoneNumberViewController: UIViewController {
         sendCodeButton.isEnabled = false
         
         //
+        enterNumberTextField.becomeFirstResponder()
         enterNumberTextField.setFlag(key: .FR)
         enterNumberTextField.delegate = self
         enterNumberTextField.displayMode = .list
-        enterNumberTextField.backgroundColor = .white
+        enterNumberTextField.backgroundColor = .black
+        enterNumberTextField.layer.cornerRadius = 10
+        enterNumberTextField.textColor = .white
+        enterNumberTextField.layer.borderWidth = 2
+        enterNumberTextField.layer.borderColor = UIColor.white.cgColor
+        FPNTextField.appearance().tintColor = UIColor.white
         //
         listController = FPNCountryListViewController(style: .grouped)
         listController.setup(repository: enterNumberTextField.countryRepository)

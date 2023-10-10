@@ -9,6 +9,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         view.backgroundColor = .black
         letsGoButton.skeletonButton()
     }
@@ -18,7 +19,6 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
 
             }
-        
     }
     
 

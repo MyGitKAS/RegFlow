@@ -13,6 +13,7 @@
                 <outlet property="enterNumberTextField" destination="wC1-jA-zzH" id="zTT-Gb-4Uk"/>
                 <outlet property="sendCodeButton" destination="BPt-tV-HFE" id="KN1-XO-4hY"/>
                 <outlet property="showTestNumberView" destination="H6Z-z1-CR3" id="MXx-nu-qm6"/>
+                <outlet property="switchInfo" destination="gXv-sJ-3Wm" id="8gL-Ls-ibd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,22 +23,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wC1-jA-zzH" customClass="FPNTextField" customModule="FlagPhoneNumber">
-                    <rect key="frame" x="45" y="339" width="323" height="51.5"/>
+                    <rect key="frame" x="45" y="344" width="323" height="51.5"/>
                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="35"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smP-th-1jx">
-                    <rect key="frame" x="45" y="234" width="323" height="35"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smP-th-1jx">
+                    <rect key="frame" x="45" y="214" width="323" height="80"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="2hG-tA-Nud"/>
+                        <constraint firstAttribute="height" constant="80" id="2hG-tA-Nud"/>
                     </constraints>
                     <attributedString key="attributedText">
                         <fragment content="Enter phone number">
                             <attributes>
                                 <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <font key="NSFont" size="28" name="Courier-Bold"/>
+                                <font key="NSFont" size="40" name="Courier-Bold"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
@@ -45,7 +46,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BPt-tV-HFE">
-                    <rect key="frame" x="45" y="460.5" width="323" height="40"/>
+                    <rect key="frame" x="45" y="455.5" width="323" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="nhg-2O-Edf"/>
@@ -65,23 +66,23 @@
                         <action selector="sendCodeButtonAction:" destination="-1" eventType="touchUpInside" id="9lo-t7-PoL"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show test number and verification code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGH-Kg-CLl">
-                    <rect key="frame" x="89" y="540.5" width="236" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show test number and verification code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGH-Kg-CLl">
+                    <rect key="frame" x="89" y="535.5" width="236" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="onc-OW-ZgW"/>
+                        <constraint firstAttribute="height" constant="40" id="onc-OW-ZgW"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gXv-sJ-3Wm">
-                    <rect key="frame" x="184" y="600.5" width="49" height="31"/>
+                    <rect key="frame" x="184" y="615.5" width="49" height="31"/>
                     <connections>
                         <action selector="testNumberSwitch:" destination="-1" eventType="valueChanged" id="rrA-FW-Yor"/>
                     </connections>
                 </switch>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6Z-z1-CR3">
-                    <rect key="frame" x="80" y="671.5" width="254" height="60"/>
+                    <rect key="frame" x="80" y="686.5" width="254" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test numb: +33 3 33 33 33 31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-YR-Kub">
                             <rect key="frame" x="23" y="8" width="208" height="18"/>
@@ -114,7 +115,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wC1-jA-zzH" secondAttribute="trailing" constant="46" id="0gz-xu-JRn"/>
                 <constraint firstItem="gXv-sJ-3Wm" firstAttribute="top" secondItem="EGH-Kg-CLl" secondAttribute="bottom" constant="40" id="67W-Ps-UB8"/>
                 <constraint firstItem="smP-th-1jx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="6Go-FQ-4Kh"/>
-                <constraint firstItem="wC1-jA-zzH" firstAttribute="top" secondItem="smP-th-1jx" secondAttribute="bottom" constant="70" id="8Q6-ng-E2d"/>
+                <constraint firstItem="wC1-jA-zzH" firstAttribute="top" secondItem="smP-th-1jx" secondAttribute="bottom" constant="50" id="8Q6-ng-E2d"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gXv-sJ-3Wm" secondAttribute="trailing" constant="183" id="Cmz-PE-RhN"/>
                 <constraint firstItem="H6Z-z1-CR3" firstAttribute="top" secondItem="gXv-sJ-3Wm" secondAttribute="bottom" constant="40" id="Cwe-Qj-98g"/>
                 <constraint firstItem="BPt-tV-HFE" firstAttribute="trailing" secondItem="wC1-jA-zzH" secondAttribute="trailing" id="D5l-ij-gtJ"/>
@@ -124,8 +125,8 @@
                 <constraint firstItem="H6Z-z1-CR3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="NJ1-kN-4dy"/>
                 <constraint firstItem="BPt-tV-HFE" firstAttribute="leading" secondItem="wC1-jA-zzH" secondAttribute="leading" id="Qp8-S7-r6K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="smP-th-1jx" secondAttribute="trailing" constant="46" id="VZP-R4-GDI"/>
-                <constraint firstItem="BPt-tV-HFE" firstAttribute="top" secondItem="wC1-jA-zzH" secondAttribute="bottom" constant="70" id="WWw-Cu-FpQ"/>
-                <constraint firstItem="smP-th-1jx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="190" id="jt7-2R-dz7"/>
+                <constraint firstItem="BPt-tV-HFE" firstAttribute="top" secondItem="wC1-jA-zzH" secondAttribute="bottom" constant="60" id="WWw-Cu-FpQ"/>
+                <constraint firstItem="smP-th-1jx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="170" id="jt7-2R-dz7"/>
                 <constraint firstItem="EGH-Kg-CLl" firstAttribute="top" secondItem="BPt-tV-HFE" secondAttribute="bottom" constant="40" id="juO-7b-msb"/>
                 <constraint firstItem="H6Z-z1-CR3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="o0U-lV-B7t"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H6Z-z1-CR3" secondAttribute="trailing" constant="80" id="rSK-33-t9w"/>

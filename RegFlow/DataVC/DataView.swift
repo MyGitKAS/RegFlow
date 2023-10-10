@@ -6,6 +6,7 @@ class DataView: UIView {
     
     var fieldStack = UIStackView()
     var verifyFilds = [DataTextField]()
+    let datePicker = UIDatePicker()
     
     private  let placeHolderText = ["Name","Date","Email","Password","ConfirmPassword"]
     
@@ -16,11 +17,21 @@ class DataView: UIView {
         verifyTextFieldConfiguration()
         setConstraints()
         verifyFilds[0].becomeFirstResponder()
-        
+        datePickerConfig()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func datePickerConfig() {
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .date
+        datePicker.backgroundColor = .black
+        datePicker.addTarget(self, action: #selector(dateSelection), for: .valueChanged)
+        datePicker.setValue(UIColor.white, forKey: "textColor")
+        verifyFilds[1].inputView = datePicker
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func verifyTextFieldConfiguration() {
@@ -37,6 +48,14 @@ class DataView: UIView {
         }
         addSubview(fieldStack)
     }
+    @objc func dateSelection() {
+         let dateFormatter = DateFormatter()
+              dateFormatter.dateStyle = .medium
+              dateFormatter.timeStyle = .none
+        verifyFilds[1].text = dateFormatter.string(from: datePicker.date)
+        
+    }
+    
     
     func getFieldsCode() -> String {
         var fieldsCode = ""
@@ -45,6 +64,11 @@ class DataView: UIView {
         }
         return fieldsCode
     }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        datePicker.resignFirstResponder()
+//        print("View touch!!!")
+//    }
 }
 
 //MARK: -
@@ -59,3 +83,6 @@ extension DataView {
         ])
     }
 }
+
+
+

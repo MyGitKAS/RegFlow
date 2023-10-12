@@ -8,6 +8,5 @@ extension UIViewController {
         let action = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(action)
         return alertController
-        //there may be a closure here
     }
 }

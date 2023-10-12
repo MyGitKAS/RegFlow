@@ -54,14 +54,17 @@ class EnterPhoneNumberViewController: UIViewController {
         
         // OFF check capcha
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
-    
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber!, uiDelegate: nil) {verifID,error in
-            if error != nil {
-                print(error?.localizedDescription ?? "Error")
-            } else {
+     
+        FirebaseAuthPhoneService.shared.sendVerificationCode(to: phoneNumber ?? "") {
+            result in
+            switch result {
+                
+            case .success(let verifID):
                 let vc = VerifyCodeViewController()
-                vc.verificationID = verifID
-                self.navigationController?.pushViewController(vc, animated: true)
+                     vc.verificationID = verifID
+                     self.navigationController?.pushViewController(vc, animated: true)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

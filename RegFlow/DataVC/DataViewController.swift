@@ -47,7 +47,7 @@ class DataViewController: UIViewController {
         let confirmPassword = dataView.verifyFilds[4].text
 
         if password == confirmPassword {
-            let user = User(name: name, date: date, email: email, password: password)
+            let user = LocalUser(name: name, date: date, email: email, password: password)
             let db = DatabaseService()
             db.saveUser(user)
             let vc = AddImageViewController()

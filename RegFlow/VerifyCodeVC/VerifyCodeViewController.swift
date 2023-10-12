@@ -27,6 +27,7 @@ class VerifyCodeViewController: UIViewController {
 
     @objc private func verifyButoonAction() {
        verify()
+        print("verifyButoonAction PRESsss")
     }
 }
 
@@ -53,17 +54,18 @@ extension VerifyCodeViewController {
 extension VerifyCodeViewController: VerifyProtocol {
     func verify() {
         let code = verifyView.getFieldsCode()
-        let credetional = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: code)
-        
-        Auth.auth().signIn(with: credetional) {_, error in
-            if error != nil {
+        /////????????????
+       
+        FirebaseAuthPhoneService.shared.signIn(with: code) {resultMy in
+            switch resultMy {
+            case .success( _):
+                let vc = DataViewController()
+                     vc.modalPresentationStyle = .fullScreen
+                     self.present(vc, animated: true)
+            case .failure( _):
                 self.shake(self.verifyView)
                 self.verifyView.clearAllInputFields()
                 self.verifyView.verifyFilds[0].becomeFirstResponder()
-            } else {
-                let vc = DataViewController()
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
             }
         }
     }

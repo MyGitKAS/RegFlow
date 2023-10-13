@@ -10,8 +10,6 @@ class AddImageViewController: UIViewController {
           let button = UIButton()
           button.setImage(UIImage(named: "cross_icon"), for: .normal)
           button.addTarget(self, action: #selector(crossButtonTapped), for: .touchUpInside)
-
-          button.translatesAutoresizingMaskIntoConstraints = false
           return button
       }()
     
@@ -21,7 +19,6 @@ class AddImageViewController: UIViewController {
           button.backgroundColor = .green
           button.layer.cornerRadius = 10
           button.setTitleColor(.black, for: .normal)
-          button.translatesAutoresizingMaskIntoConstraints = false
           return button
       }()
     
@@ -32,8 +29,6 @@ class AddImageViewController: UIViewController {
           button.layer.cornerRadius = 250 / 2
           button.setTitleColor(.black, for: .normal)
           button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
-        
-          button.translatesAutoresizingMaskIntoConstraints = false
           return button
       }()
     
@@ -42,7 +37,6 @@ class AddImageViewController: UIViewController {
         label.text = "Add your photo"
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 25)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -50,7 +44,6 @@ class AddImageViewController: UIViewController {
         let imageView = UIImageView()
         imageView.backgroundColor = .gray
         imageView.layer.cornerRadius = 250 / 2
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -97,6 +90,15 @@ class AddImageViewController: UIViewController {
 extension AddImageViewController {
     
     func setupConstraints() {
+        
+        crossButton.translatesAutoresizingMaskIntoConstraints = false
+        sendButton.translatesAutoresizingMaskIntoConstraints = false
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let margins = view.layoutMarginsGuide
+
         NSLayoutConstraint.activate([
             //
             label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),

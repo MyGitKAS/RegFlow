@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-uv-odD">
-                                <rect key="frame" x="57" y="308" width="300" height="156"/>
+                                <rect key="frame" x="57" y="238" width="300" height="156"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Cpt-wx-4yv"/>
@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SpW-Gg-KXu">
-                                <rect key="frame" x="57" y="514" width="300" height="40"/>
+                                <rect key="frame" x="57" y="444" width="300" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.1022562769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="etB-t9-iE9"/>
@@ -56,20 +56,35 @@
                                     <action selector="letsGoButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r4b-N0-jxn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ik6-VT-MZs">
+                                <rect key="frame" x="113" y="534" width="189" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="xEp-Dw-BWB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Have a user account?">
+                                    <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="SpW-Gg-KXu" firstAttribute="top" secondItem="rGE-uv-odD" secondAttribute="bottom" constant="50" id="7SU-VM-ky0"/>
                             <constraint firstItem="SpW-Gg-KXu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="K5n-DI-uRm"/>
+                            <constraint firstItem="SpW-Gg-KXu" firstAttribute="top" secondItem="rGE-uv-odD" secondAttribute="bottom" constant="50" id="Kiy-mh-G2x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SpW-Gg-KXu" secondAttribute="trailing" constant="57" id="Y9p-xF-eRS"/>
-                            <constraint firstItem="rGE-uv-odD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="220" id="iMj-8Y-Jfu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ik6-VT-MZs" secondAttribute="trailing" constant="112" id="h3J-Ce-RxJ"/>
+                            <constraint firstItem="rGE-uv-odD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="iMj-8Y-Jfu"/>
+                            <constraint firstItem="ik6-VT-MZs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="n5o-LJ-07K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rGE-uv-odD" secondAttribute="trailing" constant="57" id="tyU-ra-Gb8"/>
+                            <constraint firstItem="ik6-VT-MZs" firstAttribute="top" secondItem="SpW-Gg-KXu" secondAttribute="bottom" constant="50" id="uRX-XQ-nUj"/>
                             <constraint firstItem="rGE-uv-odD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="vov-Sa-Km8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xAZ-M2-Ywp"/>
                     <connections>
+                        <outlet property="labelTopConstraint" destination="iMj-8Y-Jfu" id="cpc-4o-6e0"/>
                         <outlet property="letsGoButton" destination="SpW-Gg-KXu" id="k60-sv-YxA"/>
                         <outlet property="topLabel" destination="rGE-uv-odD" id="m5C-K5-2kS"/>
                     </connections>

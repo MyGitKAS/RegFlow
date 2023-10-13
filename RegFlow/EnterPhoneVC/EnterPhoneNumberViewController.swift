@@ -6,11 +6,10 @@ import FirebaseStorage
 
 class EnterPhoneNumberViewController: UIViewController {
 
-    @IBOutlet weak var showTestNumberView: UIView!
+    @IBOutlet weak var numberAndCodeView: UIView!
     @IBOutlet weak var enterNumberTextField: FPNTextField!
     @IBOutlet weak var sendCodeButton: UIButton!
-    
-    @IBOutlet weak var switchInfo: UISwitch!
+
     
     var listController: FPNCountryListViewController!
     var phoneNumber: String?
@@ -41,12 +40,12 @@ class EnterPhoneNumberViewController: UIViewController {
         listController.setup(repository: enterNumberTextField.countryRepository)
         listController.didSelect = { counry in self.enterNumberTextField.setFlag(countryCode: counry.code)
         }
-        //
-        showTestNumberView.isHidden = true
-        showTestNumberView.layer.cornerRadius = 10
-        showTestNumberView.backgroundColor = .clear
-        showTestNumberView.layer.borderWidth = 1
-        showTestNumberView.layer.borderColor = UIColor.green.cgColor
+        
+        numberAndCodeView.isHidden = true
+        numberAndCodeView.layer.cornerRadius = 10
+        numberAndCodeView.backgroundColor = .clear
+        numberAndCodeView.layer.borderWidth = 1
+        numberAndCodeView.layer.borderColor = UIColor.green.cgColor
     }
     
     @IBAction func sendCodeButtonAction(_ sender: UIButton) {
@@ -58,7 +57,6 @@ class EnterPhoneNumberViewController: UIViewController {
         FirebaseAuthPhoneService.shared.sendVerificationCode(to: phoneNumber ?? "") {
             result in
             switch result {
-                
             case .success(let verifID):
                 let vc = VerifyCodeViewController()
                      vc.verificationID = verifID
@@ -69,12 +67,10 @@ class EnterPhoneNumberViewController: UIViewController {
         }
     }
     
-    @IBAction func testNumberSwitch(_ sender: UISwitch) {
-        UIView.animate(withDuration: 3) {
-            self.showTestNumberView.isHidden = !sender.isOn
-        }
-        showTestNumberView.isHidden = !sender.isOn
+    @IBAction func textSwitchTapped(_ sender: UISwitch) {
+        numberAndCodeView.isHidden = !sender.isOn
     }
+    
 }
 
 extension EnterPhoneNumberViewController: UITextFieldDelegate {

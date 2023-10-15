@@ -1,0 +1,61 @@
+//
+//  EndRegisrationViewController.swift
+//  RegFlow
+//
+//  Created by Алексей Кухленков on 7.10.23.
+//
+
+import UIKit
+
+class RegistrationCongratulationsViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .orange
+        
+        // Создать майник
+               let tShirt = UILabel(frame: CGRect(x: 50, y: 100, width: 200, height: 100))
+               tShirt.text = "Майник"
+               tShirt.textAlignment = .center
+               tShirt.font = UIFont.boldSystemFont(ofSize: 30)
+               
+               // Создать эффект неона
+               tShirt.layer.shadowColor = UIColor.red.cgColor
+               tShirt.layer.shadowOffset = CGSize(width: 0, height: 0)
+               tShirt.layer.shadowRadius = 8
+               tShirt.layer.shadowOpacity = 1
+               
+               view.addSubview(tShirt)
+        
+        
+        
+
+//        // Создание View с текстом
+//        let congratsLabel = UILabel()
+//        congratsLabel.text = "Поздравляем с регистрацией"
+//        congratsLabel.textAlignment = .center
+//        congratsLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.view.addSubview(congratsLabel)
+//
+//        // Ограничения для Label
+//        congratsLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        congratsLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+//
+//        // Создание кнопки закрыть
+//        let closeButton = UIButton(type: .system)
+//        closeButton.setTitle("Закрыть", for: .normal)
+//        closeButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.view.addSubview(closeButton)
+//
+//        // Ограничения для кнопки закрыть
+//        closeButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        closeButton.topAnchor.constraint(equalTo: congratsLabel.bottomAnchor, constant: 16).isActive = true
+//
+//        // Добавление действия на кнопку закрыть
+//        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func closeButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}

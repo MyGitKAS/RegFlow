@@ -12,8 +12,6 @@ class DataView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        fieldStack.translatesAutoresizingMaskIntoConstraints = false
         verifyTextFieldConfiguration()
         setConstraints()
         verifyFilds[0].becomeFirstResponder()
@@ -64,16 +62,13 @@ class DataView: UIView {
         }
         return fieldsCode
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        datePicker.resignFirstResponder()
-//        print("View touch!!!")
-//    }
 }
 
 //MARK: -
 extension DataView {
     private func setConstraints() {
+        fieldStack.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             fieldStack.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0),
             fieldStack.topAnchor.constraint(equalTo: topAnchor, constant: 0),

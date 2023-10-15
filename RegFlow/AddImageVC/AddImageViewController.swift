@@ -6,22 +6,8 @@ class AddImageViewController: UIViewController {
     private let widthImage = 250
     private let heightImage = 250
     
-    let crossButton: UIButton = {
-          let button = UIButton()
-          button.setImage(UIImage(named: "cross_icon"), for: .normal)
-          button.addTarget(self, action: #selector(crossButtonTapped), for: .touchUpInside)
-          return button
-      }()
-    
-    let sendButton: UIButton = {
-          let button = UIButton()
-          button.setTitle("Click Me", for: .normal)
-          button.backgroundColor = .green
-          button.layer.cornerRadius = 10
-          button.setTitleColor(.black, for: .normal)
-          return button
-      }()
-    
+    let crossButton = UIButton()
+    let sendButton = UIButton()
     let addButton: UIButton = {
           let button = UIButton()
           button.setTitle("Tap to add", for: .normal)
@@ -32,46 +18,49 @@ class AddImageViewController: UIViewController {
           return button
       }()
     
-    let label: UILabel = {
-        let label = UILabel()
-        label.text = "Add your photo"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 25)
-        return label
-    }()
+    let topLabel = UILabel()
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .gray
         imageView.layer.cornerRadius = 250 / 2
+        imageView.layer.shadowColor = UIColor.green.cgColor
+        imageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        imageView.layer.shadowRadius = 8
+        imageView.layer.shadowOpacity = 1
         return imageView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .black
-        view.addSubview(label)
+        view.addSubview(topLabel)
         view.addSubview(imageView)
         view.addSubview(sendButton)
         view.addSubview(addButton)
         view.addSubview(crossButton)
         
-        setConfig()
+        setConfiguration()
         setupConstraints()
     }
     
-    func setConfig() {
+    func setConfiguration() {
         //
         imageView.frame.size = CGSize(width: widthImage, height: heightImage)
         imageView.layer.cornerRadius = CGFloat(widthImage / 2)
         imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.green.cgColor
         imageView.layer.borderWidth = 2
+        imageView.lightEffect()
         //
         sendButton.isHidden = true
+        sendButton.skeletonButton()
+        sendButton.setTitle("Accept", for: .normal)
         //
-        crossButton.frame(forAlignmentRect: CGRect(x: self.view.bounds.width + 300, y: 100, width: 40, height: 40))
+        crossButton.crossButton()
+        crossButton.addTarget(self, action: #selector(crossButtonTapped), for: .touchUpInside)
+        //
+        topLabel.theTopLabel(text: "Add your photo")
     }
     
     @objc func addButtonTapped() {
@@ -94,25 +83,23 @@ extension AddImageViewController {
         crossButton.translatesAutoresizingMaskIntoConstraints = false
         sendButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.translatesAutoresizingMaskIntoConstraints = false
-        label.translatesAutoresizingMaskIntoConstraints = false
+        topLabel.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         let margins = view.layoutMarginsGuide
 
         NSLayoutConstraint.activate([
             //
-            label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-            label.bottomAnchor.constraint(equalTo: imageView.topAnchor, constant: -80),
+            crossButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
+            crossButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
+            //
+            topLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            topLabel.bottomAnchor.constraint(equalTo: imageView.topAnchor, constant: -80),
             //
             addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addButton.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -80),
             addButton.widthAnchor.constraint(equalToConstant: 250),
             addButton.heightAnchor.constraint(equalToConstant: 250),
-            //
-            crossButton.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 170),
-            crossButton.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -400),
-            crossButton.widthAnchor.constraint(equalToConstant: 30),
-            crossButton.heightAnchor.constraint(equalToConstant: 230),
             //
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -80),
@@ -137,7 +124,7 @@ extension AddImageViewController: UIImagePickerControllerDelegate & UINavigation
             if let resizedImage = originalImage.resizeImage(to: newSize) {
                       imageView.image = resizedImage
                       sendButton.isHidden = false
-                addButton.isHidden = true
+                      addButton.isHidden = true
             } else {
                 // Handle error
             }

@@ -9,22 +9,25 @@ class VerifyCodeViewController: UIViewController {
     private let verifyView = VerifyView()
     private lazy var checkButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Check code", for: .normal)
-        button.skeletonButton()
-        button.addTarget(self, action: #selector(verifyButoonAction), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
-        view.backgroundColor = .black
         super.viewDidLoad()
+        setConfiguration()
+        setConstraints()
+    }
+    private func setConfiguration() {
+        view.backgroundColor = .black
         view.addSubview(verifyView)
         view.addSubview(checkButton)
         verifyView.verifyDelegate = self
-        setConstraints()
+        //
+        checkButton.addTarget(self, action: #selector(verifyButoonAction), for: .touchUpInside)
+        checkButton.skeletonButton()
     }
-
+    
     @objc private func verifyButoonAction() {
        verify()
         print("verifyButoonAction PRESsss")
@@ -35,6 +38,9 @@ class VerifyCodeViewController: UIViewController {
 
 extension VerifyCodeViewController {
     private func setConstraints() {
+       checkButton.translatesAutoresizingMaskIntoConstraints = false
+        //let margins = view.layoutMarginsGuide
+        
         NSLayoutConstraint.activate([
             //
             verifyView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
@@ -54,8 +60,7 @@ extension VerifyCodeViewController {
 extension VerifyCodeViewController: VerifyProtocol {
     func verify() {
         let code = verifyView.getFieldsCode()
-        /////????????????
-       
+    
         FirebaseAuthPhoneService.shared.signIn(with: code) {resultMy in
             switch resultMy {
             case .success( _):

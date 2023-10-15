@@ -1,19 +1,14 @@
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class DataViewController: UIViewController {
     
     let dataView = DataView()
     let createUserButton = UIButton()
-    let topLabel: UILabel = {
-    let label = UILabel()
-    label.text = "Give your data to the Matrix."
-    label.textColor = .white
-    label.textAlignment = .center
-    label.font = UIFont(name: "Courier", size: 40)
-    label.numberOfLines = 0
-   return label
-}()
+    let crossButton =  UIButton()
+    let topLabel =  UILabel()
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +18,32 @@ class DataViewController: UIViewController {
         view.addSubview(dataView)
         view.addSubview(topLabel)
         view.addSubview(createUserButton)
+        view.addSubview(crossButton)
         
         setConstraints()
-        setConfigure()
+        setConfiguration() 
     }
     
-    private func setConfigure() {
-        let yOffset = 500
-        let offset = 100
-        //
+    private func setConfiguration() {
+        createUserButton.skeletonButton()
         createUserButton.setTitle("Create", for: .normal)
         createUserButton.addTarget(self, action: #selector(createButtonTapped), for: .touchUpInside)
-        createUserButton.skeletonButton()
         //
-        topLabel.frame = CGRect(x: 0, y: 80, width: view.frame.width, height: 250)
+        crossButton.crossButton()
+        crossButton.addTarget(self, action: #selector(crossButtonTapped), for: .touchUpInside)
+        //
+        topLabel.theTopLabel(text: "Give your data to the Matrix.")
+    }
+    
+    @objc func crossButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     @objc func createButtonTapped() {
-        let name = dataView.verifyFilds[0].text ?? "non"
-        let date = dataView.verifyFilds[1].text ?? "non"
-        let email = dataView.verifyFilds[2].text ?? "non"
-        let password = dataView.verifyFilds[3].text ?? "non"
+        let name = dataView.verifyFilds[0].text ?? "Empty"
+        let date = dataView.verifyFilds[1].text ?? "Empty"
+        let email = dataView.verifyFilds[2].text ?? "Empty"
+        let password = dataView.verifyFilds[3].text ?? "Empty"
         let confirmPassword = dataView.verifyFilds[4].text
 
         if password == confirmPassword {
@@ -63,23 +63,32 @@ class DataViewController: UIViewController {
 
 extension DataViewController {
     private func setConstraints() {
+        createUserButton.translatesAutoresizingMaskIntoConstraints = false
+        topLabel.translatesAutoresizingMaskIntoConstraints = false
+        crossButton.translatesAutoresizingMaskIntoConstraints = false
+        dataView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let margins = view.layoutMarginsGuide
+        
         NSLayoutConstraint.activate([
-            
-            
-            topLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            topLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            topLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            topLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            //+
+            crossButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
+            crossButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
             //
-            dataView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
-            dataView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            dataView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            topLabel.topAnchor.constraint(equalTo: crossButton.bottomAnchor, constant: 60),
+            topLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 50),
+            topLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -50),
+            topLabel.heightAnchor.constraint(equalToConstant: 150),
+            //
+            dataView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 50),
+            dataView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 50),
+            dataView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -50),
             dataView.heightAnchor.constraint(equalToConstant: 250),
             //
-            createUserButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            createUserButton.topAnchor.constraint(equalTo: dataView.bottomAnchor, constant: 50),
-            createUserButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            createUserButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            createUserButton.topAnchor.constraint(equalTo: dataView.bottomAnchor, constant: 60),
+            createUserButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 50),
+            createUserButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -50),
+            createUserButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }

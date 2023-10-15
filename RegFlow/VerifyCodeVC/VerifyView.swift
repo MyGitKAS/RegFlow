@@ -13,7 +13,7 @@ class VerifyView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        verifyTextFieldConfiguration()
+        setConfiguration()
         setConstraints()
         translatesAutoresizingMaskIntoConstraints = false
         verifyFilds[0].becomeFirstResponder()
@@ -23,7 +23,7 @@ class VerifyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func verifyTextFieldConfiguration() {
+    private func setConfiguration() {
         fieldStack.translatesAutoresizingMaskIntoConstraints = false
         fieldStack.spacing = 5
         fieldStack.distribution = .fillEqually

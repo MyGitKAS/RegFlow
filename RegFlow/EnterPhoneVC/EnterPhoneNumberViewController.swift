@@ -16,9 +16,9 @@ class EnterPhoneNumberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       setupConfig()
+        setConfiguration()
     }
-    private func setupConfig() {
+    private func setConfiguration() {
         //
         sendCodeButton.skeletonButton()
         sendCodeButton.alpha = 0.5

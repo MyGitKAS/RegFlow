@@ -14,8 +14,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func letsGoButtonAction(_ sender: Any) {
-        let vc = EnterPhoneNumberViewController()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = EnterPhoneNumberViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = LoginViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        
         
     }
 }

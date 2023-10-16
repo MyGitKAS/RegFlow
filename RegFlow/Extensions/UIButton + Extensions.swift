@@ -3,7 +3,7 @@ import UIKit
 
 extension UIButton {
     func skeletonButton(title text: String){
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 20
         self.backgroundColor = .clear
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.green.cgColor

@@ -4,7 +4,20 @@ import UIKit
 
 class ProfileIfoTextView: UIStackView {
     
-    let texts = ["Date", "Email", "Telegram", "City", "Password"]
+    
+    private let texts = ["Date", "Email", "Telegram", "City", "Password"]
+    private var textFildArray = [UITextField]()
+    private var sendTag: Int?
+    private let acceptButton: UIButton = {
+        let editButton = UIButton(type: .system)
+        editButton.setTitle("Accept", for: .normal)
+        editButton.setTitleColor(.cyan, for: .normal)
+        editButton.addTarget(self, action: #selector(acceptButtonTapped(_:)), for: .touchUpInside)
+        editButton.isHidden = false
+        editButton.backgroundColor = .black
+        return editButton
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,9 +36,10 @@ class ProfileIfoTextView: UIStackView {
         for text in texts {
             let textField = UITextField()
             textField.text = text
-            textField.isEnabled = true
+            textField.isEnabled = false
             textField.backgroundColor = .black
             textField.textColor = .green
+            textFildArray.append(textField)
             
             // Create Label
             let label = UILabel()
@@ -47,8 +61,6 @@ class ProfileIfoTextView: UIStackView {
             let line = UIView()
             line.backgroundColor = .white
             line.translatesAutoresizingMaskIntoConstraints = false
-            //
-            
             
             // Create horisontal stack
             let subStackView = UIStackView()
@@ -65,6 +77,7 @@ class ProfileIfoTextView: UIStackView {
             // Activate constraint
             subStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
             subStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+            subStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
             //
             editButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
             editButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -73,9 +86,19 @@ class ProfileIfoTextView: UIStackView {
             //
             line.heightAnchor.constraint(equalToConstant: 1).isActive = true
         }
+        self.addArrangedSubview(acceptButton)
+        
     }
     
+    @objc  func acceptButtonTapped(_ sender: UIButton) {
+        guard let tag = sendTag else { return }
+        textFildArray[tag].isEnabled = false
+        textFildArray[tag].resignFirstResponder()
+      }
+    
     @objc  func editButtonTapped(_ sender: UIButton) {
-       //
+        textFildArray[sender.tag].isEnabled = true
+        textFildArray[sender.tag].becomeFirstResponder()
+        sendTag = sender.tag
       }
 }

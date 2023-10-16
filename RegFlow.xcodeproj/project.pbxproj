@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1F2C634D2AD282AF00179162 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C634C2AD282AF00179162 /* AddImageViewController.swift */; };
-		1F2C634F2AD2891D00179162 /* UIImage .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C634E2AD2891D00179162 /* UIImage .swift */; };
-		1F2C63532AD30B2B00179162 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63522AD30B2A00179162 /* UIButton.swift */; };
+		1F2C634F2AD2891D00179162 /* UIImage  + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C634E2AD2891D00179162 /* UIImage  + Extensions.swift */; };
+		1F2C63532AD30B2B00179162 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63522AD30B2A00179162 /* UIButton + Extensions.swift */; };
 		1F2C63562AD3281100179162 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63552AD3281100179162 /* DatabaseService.swift */; };
 		1F2C63592AD32BCB00179162 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63582AD32BCB00179162 /* LocalUser.swift */; };
 		1F2C635B2AD33E0D00179162 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2C635A2AD33E0D00179162 /* FirebaseFirestore */; };
 		1F2C635D2AD45F7700179162 /* FirebaseAuthPhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C635C2AD45F7600179162 /* FirebaseAuthPhoneService.swift */; };
 		1F64408C2ADD59B10044E9F4 /* ProfileIfoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64408B2ADD59B10044E9F4 /* ProfileIfoTextView.swift */; };
+		1F64408F2ADDB3850044E9F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64408E2ADDB3850044E9F4 /* LoginViewController.swift */; };
 		1F6CBF062AC0393B00616FA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF052AC0393B00616FA2 /* AppDelegate.swift */; };
 		1F6CBF082AC0393C00616FA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */; };
 		1F6CBF0A2AC0393C00616FA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF092AC0393C00616FA2 /* ViewController.swift */; };
@@ -28,7 +29,7 @@
 		1F6CBF262AC0441D00616FA2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1F6CBF252AC0441D00616FA2 /* FirebaseStorage */; };
 		1F6CBF292AC0598C00616FA2 /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF272AC0598C00616FA2 /* EnterPhoneNumberViewController.swift */; };
 		1F6CBF2A2AC0598C00616FA2 /* EnterPhoneNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6CBF282AC0598C00616FA2 /* EnterPhoneNumberViewController.xib */; };
-		1F7ABC172AD9DDCF00DA36E5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ABC162AD9DDCF00DA36E5 /* UILabel.swift */; };
+		1F7ABC172AD9DDCF00DA36E5 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ABC162AD9DDCF00DA36E5 /* UILabel + Extensions.swift */; };
 		1FB1A5BE2ACC150D00F83370 /* VerifyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5BD2ACC150D00F83370 /* VerifyTextField.swift */; };
 		1FB1A5C12ACC17E400F83370 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB1A5BF2ACC17E400F83370 /* VerifyCodeViewController.swift */; };
 		1FB1A5C22ACC17E400F83370 /* VerifyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB1A5C02ACC17E400F83370 /* VerifyCodeViewController.xib */; };
@@ -46,12 +47,13 @@
 /* Begin PBXFileReference section */
 		08E75FA5FBCE3A62BF6074C9 /* Pods-RegFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegFlow.debug.xcconfig"; path = "Target Support Files/Pods-RegFlow/Pods-RegFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		1F2C634C2AD282AF00179162 /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
-		1F2C634E2AD2891D00179162 /* UIImage .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage .swift"; sourceTree = "<group>"; };
-		1F2C63522AD30B2A00179162 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		1F2C634E2AD2891D00179162 /* UIImage  + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage  + Extensions.swift"; sourceTree = "<group>"; };
+		1F2C63522AD30B2A00179162 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
 		1F2C63552AD3281100179162 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		1F2C63582AD32BCB00179162 /* LocalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		1F2C635C2AD45F7600179162 /* FirebaseAuthPhoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthPhoneService.swift; sourceTree = "<group>"; };
 		1F64408B2ADD59B10044E9F4 /* ProfileIfoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIfoTextView.swift; sourceTree = "<group>"; };
+		1F64408E2ADDB3850044E9F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F6CBF022AC0393B00616FA2 /* RegFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6CBF052AC0393B00616FA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		1F6CBF1B2AC042A000616FA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F6CBF272AC0598C00616FA2 /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		1F6CBF282AC0598C00616FA2 /* EnterPhoneNumberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterPhoneNumberViewController.xib; sourceTree = "<group>"; };
-		1F7ABC162AD9DDCF00DA36E5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		1F7ABC162AD9DDCF00DA36E5 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		1FB1A5BD2ACC150D00F83370 /* VerifyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTextField.swift; sourceTree = "<group>"; };
 		1FB1A5BF2ACC17E400F83370 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
 		1FB1A5C02ACC17E400F83370 /* VerifyCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyCodeViewController.xib; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1F64408D2ADDACB10044E9F4 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				1F64408E2ADDB3850044E9F4 /* LoginViewController.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
 		1F6CBEF92AC0393B00616FA2 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 				1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */,
 				1F6CBF092AC0393C00616FA2 /* ViewController.swift */,
 				1F6CBF0B2AC0393C00616FA2 /* Main.storyboard */,
+				1F64408D2ADDACB10044E9F4 /* LoginVC */,
 				1F2C634B2AD2829200179162 /* AddImageVC */,
 				1F2C63422AD1DF5B00179162 /* ProfileVС */,
 				1FB1A5EC2AD1A87D00F83370 /* DataVC */,
@@ -177,9 +188,9 @@
 			children = (
 				1FB1A5C62ACD312900F83370 /* UIViewController + Extensions.swift */,
 				1FFF6E822ADBE6FB00CFC6A2 /* UIImageView + Extensions.swift */,
-				1F2C634E2AD2891D00179162 /* UIImage .swift */,
-				1F2C63522AD30B2A00179162 /* UIButton.swift */,
-				1F7ABC162AD9DDCF00DA36E5 /* UILabel.swift */,
+				1F2C634E2AD2891D00179162 /* UIImage  + Extensions.swift */,
+				1F2C63522AD30B2A00179162 /* UIButton + Extensions.swift */,
+				1F7ABC162AD9DDCF00DA36E5 /* UILabel + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,12 +373,13 @@
 				1FB1A5F02AD1A8FA00F83370 /* DataTextField.swift in Sources */,
 				1FB1A5BE2ACC150D00F83370 /* VerifyTextField.swift in Sources */,
 				1F64408C2ADD59B10044E9F4 /* ProfileIfoTextView.swift in Sources */,
+				1F64408F2ADDB3850044E9F4 /* LoginViewController.swift in Sources */,
 				1FB1A5C72ACD312900F83370 /* UIViewController + Extensions.swift in Sources */,
 				1F2C635D2AD45F7700179162 /* FirebaseAuthPhoneService.swift in Sources */,
 				1F6CBF0A2AC0393C00616FA2 /* ViewController.swift in Sources */,
 				1F6CBF062AC0393B00616FA2 /* AppDelegate.swift in Sources */,
-				1F2C63532AD30B2B00179162 /* UIButton.swift in Sources */,
-				1F7ABC172AD9DDCF00DA36E5 /* UILabel.swift in Sources */,
+				1F2C63532AD30B2B00179162 /* UIButton + Extensions.swift in Sources */,
+				1F7ABC172AD9DDCF00DA36E5 /* UILabel + Extensions.swift in Sources */,
 				1F2C63562AD3281100179162 /* DatabaseService.swift in Sources */,
 				1F2C63592AD32BCB00179162 /* LocalUser.swift in Sources */,
 				1FFF6E832ADBE6FB00CFC6A2 /* UIImageView + Extensions.swift in Sources */,
@@ -376,7 +388,7 @@
 				1FB1A5F22AD1A90900F83370 /* DataViewController.swift in Sources */,
 				1FB1A5C12ACC17E400F83370 /* VerifyCodeViewController.swift in Sources */,
 				1F2C634D2AD282AF00179162 /* AddImageViewController.swift in Sources */,
-				1F2C634F2AD2891D00179162 /* UIImage .swift in Sources */,
+				1F2C634F2AD2891D00179162 /* UIImage  + Extensions.swift in Sources */,
 				1FFF6E7F2ADB3AC100CFC6A2 /* RealtimeDatabaseServise.swift in Sources */,
 				1FFF6E852ADC00CE00CFC6A2 /* ProfileViewController.swift in Sources */,
 				1F6CBF082AC0393C00616FA2 /* SceneDelegate.swift in Sources */,

@@ -39,7 +39,14 @@ class ProfileViewController: UIViewController {
         logOutButton.skeletonButton(title: "Log Out")
         logOutButton.layer.borderColor = UIColor.red.cgColor
         logOutButton.setTitleColor(.red, for: .normal)
+        logOutButton.addTarget(self, action: #selector(logOutButtonTapped(_:)), for: .touchUpInside)
         
+    }
+    
+    @objc func logOutButtonTapped(_ sender: UIButton) {
+        let vc = ViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }
 
@@ -63,7 +70,7 @@ extension ProfileViewController {
             nameTextView.heightAnchor.constraint(equalToConstant: 50),
             //
             infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            infoView.topAnchor.constraint(equalTo: nameTextView.bottomAnchor, constant: 10),
+            infoView.topAnchor.constraint(equalTo: nameTextView.bottomAnchor, constant: 20),
             infoView.widthAnchor.constraint(equalToConstant: 330),
             //
             logOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

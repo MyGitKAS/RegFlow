@@ -47,7 +47,6 @@ class VerifyView: UIView {
     }
 }
 
-//MARK: -
 extension VerifyView: FieldsProtocol {
     
     func activeNextField(tag: Int) {
@@ -66,7 +65,7 @@ extension VerifyView: FieldsProtocol {
         }
     }
 }
-//MARK: -
+
 extension VerifyView {
     private func setConstraints() {
         NSLayoutConstraint.activate([

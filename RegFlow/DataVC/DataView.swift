@@ -51,9 +51,7 @@ class DataView: UIView {
               dateFormatter.dateStyle = .medium
               dateFormatter.timeStyle = .none
         verifyFilds[1].text = dateFormatter.string(from: datePicker.date)
-        
     }
-    
     
     func getFieldsCode() -> String {
         var fieldsCode = ""
@@ -64,7 +62,6 @@ class DataView: UIView {
     }
 }
 
-//MARK: -
 extension DataView {
     private func setConstraints() {
         fieldStack.translatesAutoresizingMaskIntoConstraints = false

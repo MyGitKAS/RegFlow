@@ -7,11 +7,7 @@ class VerifyCodeViewController: UIViewController {
     var verificationID: String!
     
     private let verifyView = VerifyView()
-    private lazy var checkButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Check code", for: .normal)
-        return button
-    }()
+    private lazy var checkButton =  UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +21,11 @@ class VerifyCodeViewController: UIViewController {
         verifyView.verifyDelegate = self
         //
         checkButton.addTarget(self, action: #selector(verifyButoonAction), for: .touchUpInside)
-        checkButton.skeletonButton()
+        checkButton.skeletonButton(title: "Check code")
     }
     
     @objc private func verifyButoonAction() {
        verify()
-        print("verifyButoonAction PRESsss")
     }
 }
 
@@ -54,7 +49,6 @@ extension VerifyCodeViewController {
             checkButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
-    
 }
 
 extension VerifyCodeViewController: VerifyProtocol {
@@ -75,7 +69,6 @@ extension VerifyCodeViewController: VerifyProtocol {
         }
     }
 }
-
 // MARK: - The effect of shaking with incorrect input
 extension VerifyCodeViewController {
     private func shake(_ object: AnyObject) {

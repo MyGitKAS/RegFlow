@@ -10,15 +10,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        letsGoButton.skeletonButton()
+        letsGoButton.skeletonButton(title: "Let's Go!")
     }
     
     @IBAction func letsGoButtonAction(_ sender: Any) {
-//        let vc = EnterPhoneNumberViewController()
-//        navigationController?.pushViewController(vc, animated: true)
-let vc = ProfileViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc,animated: true)
+        let vc = EnterPhoneNumberViewController()
+        navigationController?.pushViewController(vc, animated: true)
         
     }
 }

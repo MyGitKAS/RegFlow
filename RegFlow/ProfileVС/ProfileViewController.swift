@@ -7,7 +7,7 @@ class ProfileViewController: UIViewController {
     let imageView = UIImageView()
     let nameLabel = UILabel()
     let nameTextView = UITextView()
-    let infoView = UIView()
+    let infoView = ProfileIfoTextView()
     let logOutButton = UIButton()
 
     override func viewDidLoad() {
@@ -36,9 +36,10 @@ class ProfileViewController: UIViewController {
         nameTextView.textAlignment = .center
         nameTextView.font = UIFont(name: "Futura", size: 25)
         //
-        infoView.backgroundColor = .white
-        //
-        logOutButton.skeletonButton()
+        logOutButton.skeletonButton(title: "Log Out")
+        logOutButton.layer.borderColor = UIColor.red.cgColor
+        logOutButton.setTitleColor(.red, for: .normal)
+        
     }
 }
 
@@ -63,11 +64,10 @@ extension ProfileViewController {
             //
             infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             infoView.topAnchor.constraint(equalTo: nameTextView.bottomAnchor, constant: 10),
-            infoView.widthAnchor.constraint(equalToConstant: 300),
-            infoView.heightAnchor.constraint(equalToConstant: 400),
+            infoView.widthAnchor.constraint(equalToConstant: 330),
             //
             logOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logOutButton.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 30),
+            logOutButton.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 80),
             logOutButton.widthAnchor.constraint(equalToConstant: 200),
             logOutButton.heightAnchor.constraint(equalToConstant: 40),
         ])

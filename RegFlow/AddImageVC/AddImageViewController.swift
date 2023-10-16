@@ -7,7 +7,7 @@ class AddImageViewController: UIViewController {
     private let heightImage = 250
     
     let crossButton = UIButton()
-    let sendButton = UIButton()
+    let saveButton = UIButton()
     let addButton: UIButton = {
           let button = UIButton()
           button.setTitle("Tap to add", for: .normal)
@@ -36,7 +36,7 @@ class AddImageViewController: UIViewController {
         view.backgroundColor = .black
         view.addSubview(topLabel)
         view.addSubview(imageView)
-        view.addSubview(sendButton)
+        view.addSubview(saveButton)
         view.addSubview(addButton)
         view.addSubview(crossButton)
         
@@ -53,9 +53,9 @@ class AddImageViewController: UIViewController {
         imageView.layer.borderWidth = 2
         imageView.lightEffect()
         //
-        sendButton.isHidden = true
-        sendButton.skeletonButton()
-        sendButton.setTitle("Accept", for: .normal)
+        saveButton.isHidden = true
+        saveButton.skeletonButton(title: "Save Photo")
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         //
         crossButton.crossButton()
         crossButton.addTarget(self, action: #selector(crossButtonTapped), for: .touchUpInside)
@@ -74,14 +74,17 @@ class AddImageViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func saveButtonTapped() {
+            let vc = ProfileViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc,animated: true)
+        }
 }
 
 extension AddImageViewController {
-    
     func setupConstraints() {
-        
         crossButton.translatesAutoresizingMaskIntoConstraints = false
-        sendButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.translatesAutoresizingMaskIntoConstraints = false
         topLabel.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +92,6 @@ extension AddImageViewController {
         let margins = view.layoutMarginsGuide
 
         NSLayoutConstraint.activate([
-            //
             crossButton.topAnchor.constraint(equalTo: margins.topAnchor, constant: 10),
             crossButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
             //
@@ -106,10 +108,10 @@ extension AddImageViewController {
             imageView.widthAnchor.constraint(equalToConstant: 250),
             imageView.heightAnchor.constraint(equalToConstant: 250),
             //
-            sendButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sendButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
-            sendButton.widthAnchor.constraint(equalToConstant: 250),
-            sendButton.heightAnchor.constraint(equalToConstant: 40)
+            saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            saveButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            saveButton.widthAnchor.constraint(equalToConstant: 250),
+            saveButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }
@@ -123,7 +125,7 @@ extension AddImageViewController: UIImagePickerControllerDelegate & UINavigation
 
             if let resizedImage = originalImage.resizeImage(to: newSize) {
                       imageView.image = resizedImage
-                      sendButton.isHidden = false
+                      saveButton.isHidden = false
                       addButton.isHidden = true
             } else {
                 // Handle error

@@ -20,7 +20,7 @@ class EnterPhoneNumberViewController: UIViewController {
     }
     private func setConfiguration() {
         //
-        sendCodeButton.skeletonButton()
+        sendCodeButton.skeletonButton(title: "Send Code")
         sendCodeButton.alpha = 0.5
         sendCodeButton.isEnabled = false
         

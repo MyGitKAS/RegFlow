@@ -2,11 +2,12 @@
 import UIKit
 
 extension UIButton {
-    func skeletonButton(){
+    func skeletonButton(title text: String){
         self.layer.cornerRadius = 10
         self.backgroundColor = .clear
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.green.cgColor
+        self.setTitle(text, for: .normal)
         self.setTitleColor(.green, for: .normal)
     }
 }

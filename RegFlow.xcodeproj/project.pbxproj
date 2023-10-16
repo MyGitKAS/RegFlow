@@ -14,6 +14,7 @@
 		1F2C63592AD32BCB00179162 /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C63582AD32BCB00179162 /* LocalUser.swift */; };
 		1F2C635B2AD33E0D00179162 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1F2C635A2AD33E0D00179162 /* FirebaseFirestore */; };
 		1F2C635D2AD45F7700179162 /* FirebaseAuthPhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2C635C2AD45F7600179162 /* FirebaseAuthPhoneService.swift */; };
+		1F64408C2ADD59B10044E9F4 /* ProfileIfoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F64408B2ADD59B10044E9F4 /* ProfileIfoTextView.swift */; };
 		1F6CBF062AC0393B00616FA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF052AC0393B00616FA2 /* AppDelegate.swift */; };
 		1F6CBF082AC0393C00616FA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */; };
 		1F6CBF0A2AC0393C00616FA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CBF092AC0393C00616FA2 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		1F2C63552AD3281100179162 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		1F2C63582AD32BCB00179162 /* LocalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		1F2C635C2AD45F7600179162 /* FirebaseAuthPhoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthPhoneService.swift; sourceTree = "<group>"; };
+		1F64408B2ADD59B10044E9F4 /* ProfileIfoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIfoTextView.swift; sourceTree = "<group>"; };
 		1F6CBF022AC0393B00616FA2 /* RegFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6CBF052AC0393B00616FA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F6CBF072AC0393C00616FA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1FFF6E842ADC00CE00CFC6A2 /* ProfileViewController.swift */,
+				1F64408B2ADD59B10044E9F4 /* ProfileIfoTextView.swift */,
 			);
 			path = "ProfileVС";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			files = (
 				1FB1A5F02AD1A8FA00F83370 /* DataTextField.swift in Sources */,
 				1FB1A5BE2ACC150D00F83370 /* VerifyTextField.swift in Sources */,
+				1F64408C2ADD59B10044E9F4 /* ProfileIfoTextView.swift in Sources */,
 				1FB1A5C72ACD312900F83370 /* UIViewController + Extensions.swift in Sources */,
 				1F2C635D2AD45F7700179162 /* FirebaseAuthPhoneService.swift in Sources */,
 				1F6CBF0A2AC0393C00616FA2 /* ViewController.swift in Sources */,

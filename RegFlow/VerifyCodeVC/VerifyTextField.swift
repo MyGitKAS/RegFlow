@@ -27,7 +27,6 @@ class VerifyTextField: UITextField {
         layer.borderWidth = 1
         tintColor = .clear
         textColor = .white
-//        attributedPlaceholder = NSAttributedString(string: "", attributes: [.font: UIFont.systemFont(ofSize: 44)])
         font = UIFont.systemFont(ofSize: 40)
         textAlignment = .center
     }

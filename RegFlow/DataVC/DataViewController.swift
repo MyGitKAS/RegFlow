@@ -25,8 +25,7 @@ class DataViewController: UIViewController {
     }
     
     private func setConfiguration() {
-        createUserButton.skeletonButton()
-        createUserButton.setTitle("Create", for: .normal)
+        createUserButton.skeletonButton(title: "Create")
         createUserButton.addTarget(self, action: #selector(createButtonTapped), for: .touchUpInside)
         //
         crossButton.crossButton()
